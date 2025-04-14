@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta name="description" content="Besys - Pametni sigurnosni sustavi za vaš dom i posao. Montaža, održavanje, mreže i alarmi.">
+  <meta name="keywords" content="Besys, sigurnosni sustavi, videonadzor, alarm, pametni dom, Hikvision, Ajax, TP-Link, Mikrotik, Paradox">
+  <meta name="author" content="Besys">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt - Pametni Sustav</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: url('smart-3871774_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      border-radius: 10px;
+      animation: fadeIn 1s ease-out;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      background: #0af;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #08c;
+    }
+    #potvrda {
+      display: none;
+      margin-top: 1rem;
+      color: #0f0;
+      font-weight: bold;
+    }
+    .info-box {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul style="list-style:none; padding:0; display:flex; justify-content:center; gap:2rem; margin-bottom:2rem;">
+      <li><a href="usluge.html" style="color:#0af; text-decoration:none;">Usluge</a></li>
+      <li><a href="index.html" style="color:#0af; text-decoration:none;">Kontakt</a></li>
+    </ul>
+  </nav>
+  
+  
+
+  <h1>Kontaktiraj nas</h1>
+  <p>Pošaljite upit putem obrasca</p>
+
+  <form id="kontaktForma" action="https://formspree.io/f/mgvaqwzq" method="POST">
+    <input type="text" name="name" placeholder="Vaše ime" required>
+    <input type="email" name="email" placeholder="Vaš e-mail" required>
+    <textarea name="message" placeholder="Vaša poruka..." rows="5" required></textarea>
+    <button type="submit">Pošalji</button>
+  </form>
+
+  <div id="potvrda">✅ Poruka je uspješno poslana!</div>
+
+  <div class="info-box">
+    📞 Telefon: <a href="tel:0998255098" style="color:#0af; text-decoration:none;">099 825 5098</a><br>
+    🕒 Radno vrijeme: Ponedjeljak – Petak, 08:00 – 16:00
+  </div>
+
+  <script>
+    const form = document.getElementById('kontaktForma');
+    const potvrda = document.getElementById('potvrda');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          potvrda.textContent = "✅ Poruka je uspješno poslana!";
+          potvrda.style.display = 'block';
+          form.reset();
+        } else {
+          potvrda.textContent = "❌ Došlo je do greške. Pokušajte ponovno.";
+          potvrda.style.display = 'block';
+        }
+      }).catch(() => {
+        potvrda.textContent = "❌ Greška u mreži. Provjerite internet vezu.";
+        potvrda.style.display = 'block';
+      });
+    });
+  </script>
+
+
+  <a href="https://wa.me/385998255098" target="_blank" title="Pošaljite nam poruku na WhatsApp"
+     style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white;
+     padding: 12px 16px; border-radius: 50px; text-decoration: none; font-weight: bold; display: flex;
+     align-items: center; gap: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
+    <span style="font-size: 1.2rem;">💬</span> WhatsApp
+  </a>
+
+</body>
+</html>
