@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BESYS – Pametno. Sigurno. Besys.</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #141b21;
+      color: #ffffff;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px;
+      background-color: #0f1419;
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #00adb5;
+      font-weight: bold;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      color: #00adb5;
+    }
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 600px;
+    }
+    .hero a.button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: #00adb5;
+      color: #141b21;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .hero a.button:hover {
+      background-color: #00c7cc;
+    }
+    section {
+      padding: 60px 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    h2 {
+      color: #00adb5;
+      margin-bottom: 20px;
+    }
+    .service {
+      margin-bottom: 30px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+    }
+    button {
+      padding: 12px;
+      background-color: #00adb5;
+      color: #141b21;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00c7cc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="BESYS Logo" />
+    <nav>
+      <a href="#usluge">Usluge</a>
+      <a href="#onama">O nama</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>BESYS</h1>
+    <p>Pametna i pouzdana tehnička zaštita za dom i poslovanje. Videonadzor, protuprovala, SmartHome i više.</p>
+    <a href="#kontakt" class="button">Zatraži ponudu</a>
+  </section>
+
+  <section id="usluge">
+    <h2>Naše usluge</h2>
+    <div class="service">
+      <h3>Videonadzor</h3>
+      <p>Profesionalna CCTV rješenja za nadzor objekata s pristupom putem mobilnih uređaja.</p>
+    </div>
+    <div class="service">
+      <h3>Protuprovala</h3>
+      <p>Alarmni sustavi koji štite vaš prostor od neovlaštenog ulaska i neželjenih incidenata.</p>
+    </div>
+    <div class="service">
+      <h3>SmartHome</h3>
+      <p>Integracija sigurnosnih sustava s pametnim kućama za potpunu kontrolu.</p>
+    </div>
+    <div class="service">
+      <h3>Održavanje</h3>
+      <p>Redovno održavanje i brza podrška kako biste uvijek bili sigurni.</p>
+    </div>
+  </section>
+
+  <section id="onama">
+    <h2>O nama</h2>
+    <p>BESYS je hrvatska tvrtka iz Križevaca koja pruža tehničku zaštitu najvišeg standarda. Naš pristup temelji se na pouzdanosti, brzini i inovaciji. Posvećeni smo sigurnosti naših klijenata kroz napredne sustave i osoban pristup.</p>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <form>
+      <input type="text" placeholder="Ime i prezime" required />
+      <input type="email" placeholder="Email adresa" required />
+      <textarea rows="4" placeholder="Poruka" required></textarea>
+      <button type="submit">Pošalji upit</button>
+    </form>
+    <p style="margin-top: 20px;">Možete nas kontaktirati i na:<br />
+      <strong>Email:</strong> branimir.berend@icloud.com<br />
+      <strong>Adresa:</strong> Karane 69, 48260 Križevci<br />
+      <strong>Telefon:</strong> 099 825 5098
+    </p>
+  </section>
+
+</body>
+</html>
