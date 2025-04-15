@@ -2,36 +2,44 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-  <meta charset="UTF-8">
-  <title>BESYS - Tehnička rješenja</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BESYS – Pametno. Sigurno. Tehnički.</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #12121a;
-      color: white;
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #12121a; color: white; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background-color: #1e1e2f; }
+    header h1 { color: #00adb5; margin: 0; }
+    nav a { color: #ccc; text-decoration: none; margin-left: 20px; font-weight: bold; cursor: pointer; }
+    nav a:hover { color: #00adb5; }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(to bottom, #1e1e2f, #12121a);
     }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background-color: #1e1e2f;
+    .hero h2 { color: #00adb5; font-size: 36px; margin-bottom: 20px; }
+    .hero p { font-size: 18px; color: #ccc; }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-    header h1 {
-      margin: 0;
-      color: #00adb5;
+    .section h3 { color: #00adb5; font-size: 28px; margin-bottom: 20px; }
+    .service-box {
+      background: #1e1e2f;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
-    nav a {
-      color: #ccc;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    nav a:hover {
-      color: #00adb5;
+
+    footer {
+      background: #1e1e2f;
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      font-size: 14px;
     }
 
     /* Modal styling */
@@ -53,38 +61,15 @@
       width: 90%;
       box-shadow: 0 0 12px rgba(0,0,0,0.5);
     }
-    .modal-content h2 {
-      color: #00adb5;
+    .modal-content h2 { color: #00adb5; }
+    input, button {
+      width: 100%; padding: 10px; margin: 10px 0;
+      border: none; border-radius: 6px;
     }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      background: #3a3a4f;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 15px;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #00adb5;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .close {
-      float: right;
-      font-size: 20px;
-      cursor: pointer;
-      color: white;
-    }
-    .close:hover {
-      color: red;
-    }
+    input { background: #3a3a4f; color: white; }
+    button { background: #00adb5; color: white; font-weight: bold; }
+    .close { float: right; font-size: 20px; cursor: pointer; color: white; }
+    .close:hover { color: red; }
   </style>
 </head>
 <body>
@@ -92,16 +77,48 @@
 <header>
   <h1>BESYS</h1>
   <nav>
+    <a href="#usluge">Usluge</a>
+    <a href="#zasto">Zašto mi?</a>
+    <a href="#kontakt">Kontakt</a>
     <a onclick="openModal()">🔐 Klijentski pristup</a>
   </nav>
 </header>
+
+<div class="hero">
+  <h2>Pametna i sigurna tehnička rješenja</h2>
+  <p>Specijalizirani za videonadzor, protuprovalu, pametne sustave i održavanje.</p>
+</div>
+
+<section class="section" id="usluge">
+  <h3>Naše usluge</h3>
+  <div class="service-box">📷 Videonadzor – Projektiranje, montaža i održavanje sustava</div>
+  <div class="service-box">🚨 Protuprovala – Alarmni sustavi za dom i poslovne prostore</div>
+  <div class="service-box">🏠 SmartHome – Pametna automatizacija kuća i stanova</div>
+  <div class="service-box">🔧 Održavanje – Redoviti servisi i podrška za korisnike</div>
+</section>
+
+<section class="section" id="zasto">
+  <h3>Zašto odabrati BESYS?</h3>
+  <p>✅ Inovativna rješenja &nbsp;|&nbsp; ✅ Brza podrška &nbsp;|&nbsp; ✅ 100% lokalna prisutnost</p>
+</section>
+
+<section class="section" id="kontakt">
+  <h3>Kontakt</h3>
+  <p><strong>Adresa:</strong> Karane 69, 48260 Križevci</p>
+  <p><strong>Email:</strong> branimir.berend@icloud.com</p>
+  <p><strong>Telefon:</strong> 099 825 5098</p>
+</section>
+
+<footer>
+  BESYS &copy; 2025 – Pametno. Sigurno. Tehnički.
+</footer>
 
 <div class="modal" id="loginModal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
     <h2>Prijava klijenta</h2>
-    <input type="email" id="email" placeholder="Email" />
-    <input type="password" id="password" placeholder="Lozinka" />
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Lozinka">
     <button onclick="login()">Prijava</button>
     <p id="status"></p>
   </div>
@@ -112,12 +129,11 @@
 <script src="firebase-config.js"></script>
 <script>
   firebase.initializeApp(firebaseConfig);
-
   function login() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     firebase.auth().signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
+      .then(() => {
         sessionStorage.setItem("userEmail", email);
         window.location.href = "https://berend-system.github.io/besys-klijent/portal.html";
       })
@@ -125,15 +141,12 @@
         document.getElementById("status").innerText = "Greška: " + error.message;
       });
   }
-
   function openModal() {
     document.getElementById("loginModal").style.display = "flex";
   }
-
   function closeModal() {
     document.getElementById("loginModal").style.display = "none";
   }
-
   window.onclick = function(event) {
     const modal = document.getElementById("loginModal");
     if (event.target === modal) modal.style.display = "none";
